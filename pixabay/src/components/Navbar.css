@@ -1,0 +1,28 @@
+.navbar {
+    background-color: rgb(6, 95, 95);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+  }
+  
+  .navbar h1 a {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    position: relative;
+    left: 2%;
+  }
+  
+  .navbar p {
+    margin: 0;
+  }
+  
