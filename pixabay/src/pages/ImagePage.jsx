@@ -45,7 +45,7 @@ const ImagePage = () => {
         </div>
         <div className="image-details">
           <ImageDetailsCard image={image} />
-        </div>;
+        </div>
       </div>
       <div className="related-images">
         {relatedImages.map((related) => (
