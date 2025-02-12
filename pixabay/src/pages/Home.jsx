@@ -29,9 +29,6 @@ const Home = () => {
   return (
     <div className="home">
 <header className="search-header">
-  <video autoPlay muted loop id="myVideo">
-    <source src="https://cdn.pixabay.com/video/2020/04/09/35573-407595474_large.mp4" type="video/mp4"/>
-  </video>
   <h2>Search Stunning Royalty-Free Images</h2>
   <div className="search-controls">
     <input
