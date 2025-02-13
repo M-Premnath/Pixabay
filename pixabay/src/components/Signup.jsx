@@ -10,7 +10,6 @@ import './Auth.css';
 
 
 const Signup = () => {
-  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -24,7 +23,6 @@ const Signup = () => {
       navigate("/", { replace: true });
       // Store the username in Firestore
       await setDoc(doc(db, "users", user.uid), {
-        username: username,
         email: email
       });
       console.log("user", user);
@@ -52,13 +50,6 @@ const Signup = () => {
       <form onSubmit={handleSignup} className="auth-form">
         <h2>Sign Up</h2>
         <input 
-          type="text" 
-          placeholder="Username" 
-          value={username} 
-          onChange={(e) => setUsername(e.target.value)}
-          required 
-        />
-        <input 
           type="email" 
           placeholder="Email" 
           value={email} 
@@ -73,8 +64,12 @@ const Signup = () => {
           required 
         />
         <button type="submit">Sign Up</button>
-        <button type="button"  onClick={handleGoogleLogin}>
-          Sign in with Google
+        <center>
+        <p>(or)</p>
+        </center>
+        <button type="button" id='google-btn' onClick={handleGoogleLogin}>
+         <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQn8mkUlkOzubmC-ELHPzhZM2LDpJxUKEZOk1-6mt9La2sR-ELq" alt="" />
+          Sign up with Google
         </button>
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </form>

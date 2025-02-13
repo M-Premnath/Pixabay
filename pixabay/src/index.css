@@ -2,12 +2,3 @@
   margin: 0;
   padding: 0;
 }
-body{
-  position: relative;
-  height: 400px;
-  width: 100%;
-  /* background-image: url(" https://cdn.pixabay.com/photo/2021/12/12/22/48/mountain-6867144_1280.jpg"); */
-  background-size: cover;
-  background-attachment: fixed; /* Enables parallax scrolling */
-  background-position: center;
-}

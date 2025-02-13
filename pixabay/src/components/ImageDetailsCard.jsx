@@ -35,13 +35,12 @@ const ImageDetailsCard = ({ image }) => {
   };
 
   return (
-    <div>
       <div className="card-container">
         <div className="card-header">
           <button className="icon-button">
             <FontAwesomeIcon icon={faHeart} /> {image.likes}
           </button>
-          <button className="icon-button">
+          <button className="icon-button" onClick={handleDownload}>
             <FontAwesomeIcon icon={faDownload} /> {image.downloads}
           </button>
           <button className="icon-button" onClick={handleShare}>
@@ -69,7 +68,7 @@ const ImageDetailsCard = ({ image }) => {
           <button className="follow-button">Follow</button>
         </div>
         <button className="download-button" onClick={handleDownload}>Download</button>
-      </div>
+      
       <ToastContainer
         position="bottom-right"
         toastClassName="toast-success"

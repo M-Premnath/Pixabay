@@ -2,35 +2,37 @@
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
   background-color: #333;
   color: #fff;
-
-}
-
-.navbar a {
-  color: #fff;
-  margin: 0 10px;
-  text-decoration: none;
+  position: relative;
 }
 
 .navbar-title {
   font-size: 24px;
   font-weight: bold;
+  color: #fff;
+  text-decoration: none;
 }
 
-.navbar-links{
+.navbar-links {
   display: flex;
   align-items: center;
-  justify-items: space-evenly;
-}
-.navbar-links li{
   list-style: none;
+}
+
+.navbar-links li {
   margin: 0 10px;
 }
 
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+}
 
-.username {
+.navbar-user {
+  color: #fff;
   margin-right: 10px;
 }
 
@@ -45,4 +47,38 @@ button {
 
 button:hover {
   background-color: #777;
+}
+
+.navbar-menu-icon {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .navbar-menu-icon {
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #333;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-links.active {
+    display: flex;
+    z-index: 1;
+  }
+
+  .navbar-links li {
+    margin: 15px 0;
+  }
 }

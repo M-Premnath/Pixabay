@@ -68,15 +68,7 @@
   pointer-events: none;
 }
 
-.search-header video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
+
 
   
    .image-container {
@@ -141,11 +133,23 @@
   /* Ensure responsiveness */
 @media (max-width: 768px) {
   .search-header {
-    height: 300px;
+    height: 200px;
+    margin: 10px 0px 0px;
+    gap: 20px;
   }
 
   .search-header input {
-    width: 80%;
-    font-size: 16px;
+    width: 60%;
+    font-size: 14px;
+    padding:  5px 10px;
+  }
+  .search-header h2 {
+    font-size: 30px;
+    padding: 10px;
+  }
+  .filter-dropdown{
+    width: 25%;
+    font-size: 14px;
+    padding: 8px 2px;
   }
 }

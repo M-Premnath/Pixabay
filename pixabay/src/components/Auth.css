@@ -32,7 +32,41 @@
   background-color: #555;
 }
 
-.google-btn{
-  background-color: #4285f4;
-  color: #fff;
+#google-btn{
+  background-color: #fff;
+  color: #333;
+  padding: 5px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: 600;
+  align-items: center;
+  padding-right: 15%;
+  cursor: pointer;
+}
+#google-btn img{
+  margin-left: -80px;
+  height: 30px;
+  background-color: #555;
+
+}
+
+
+@media (max-width: 768px)   {
+  .auth-container {
+    max-width: 300px;
+    margin: 50px 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  #google-btn img{
+    margin-left: -15px;
+    height: 30px;
+    background-color: #555;
+  
+  }
+  
 }

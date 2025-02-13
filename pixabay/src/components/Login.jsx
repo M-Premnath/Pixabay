@@ -53,8 +53,12 @@ const Login = () => {
           required 
         />
         <button type="submit">Login</button>
-        <button type="button" onClick={handleGoogleLogin}>
-          Sign in with Google
+        <center>
+        <p>(or)</p>
+        </center>
+        <button type="button" id='google-btn' onClick={handleGoogleLogin}>
+         <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQn8mkUlkOzubmC-ELHPzhZM2LDpJxUKEZOk1-6mt9La2sR-ELq" alt="" />
+          Login with Google
         </button>
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </form>
