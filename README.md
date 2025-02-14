@@ -1,6 +1,5 @@
 # Pixabay Image Search
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bc215cc6-9f1d-4ad3-8e75-30722b0e0ed0/deploy-status)](https://app.netlify.com/sites/pixabay-premdev/deploys)
 
 Pixabay Image Search is a web application that allows users to search for high-quality images from Pixabay's vast collection. It is built using React.js and integrates with the Pixabay API to fetch and display images based on user queries.
 
