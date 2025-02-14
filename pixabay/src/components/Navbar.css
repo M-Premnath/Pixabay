@@ -60,6 +60,7 @@ button:hover {
 @media (max-width: 768px) {
   .navbar-menu-icon {
     display: block;
+    margin-right: 5px;
   }
 
   .navbar-links {
@@ -80,5 +81,8 @@ button:hover {
 
   .navbar-links li {
     margin: 15px 0;
+  }
+  .navbar-title {
+    font-size: 18px;
   }
 }

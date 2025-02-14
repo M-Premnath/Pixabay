@@ -4,10 +4,14 @@ import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from '../firebaseConfig';
 import { useNavigate } from 'react-router-dom';
 import './Auth.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faLock, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
@@ -33,25 +37,39 @@ const Login = () => {
       setError(err.message);
     }
   };
-
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
   return (
     <div className="auth-container">
       <form className="auth-form" onSubmit={handleLogin}>
         <h2>Login</h2>
-        <input 
-          type="email" 
-          placeholder="Email" 
-          value={email} 
-          onChange={(e) => setEmail(e.target.value)}
-          required 
-        />
-        <input 
-          type="password" 
-          placeholder="Password" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)}
-          required 
-        />
+        <div className="input-group">
+          <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
+          <input 
+            type="email" 
+            placeholder="Email" 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)}
+            required 
+          />
+        </div>
+
+        <div className="input-group">
+          <FontAwesomeIcon icon={faLock} className="input-icon" />
+          <input 
+            type={showPassword ? "text" : "password"} 
+            placeholder="Password" 
+            value={password} 
+            onChange={(e) => setPassword(e.target.value)}
+            required 
+          />
+          <FontAwesomeIcon 
+            icon={showPassword ? faEyeSlash : faEye} 
+            className="password-toggle" 
+            onClick={togglePasswordVisibility} 
+          />
+        </div>
         <button type="submit">Login</button>
         <center>
         <p>(or)</p>

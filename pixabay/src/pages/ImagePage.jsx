@@ -5,6 +5,7 @@ import ImageDetailsCard from "../components/ImageDetailsCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft} from "@fortawesome/free-solid-svg-icons";
 import NotFound from "../components/NotFound";
+import { ToastContainer, toast } from 'react-toastify';
 
 const ImagePage = () => {
   const location = useLocation();
@@ -12,6 +13,7 @@ const ImagePage = () => {
   const image = location.state?.item;
   const previousSearch = location.state?.search || "";
   const [relatedImages, setRelatedImages] = useState([]);
+  const [toastMessage, setToastMessage] = useState(null);
 
   useEffect(() => {
     if (!navigator.onLine) {
@@ -33,6 +35,10 @@ const ImagePage = () => {
   if (!image) {
     return   <NotFound message="Image not found" />;
   }
+  const handleToast = (message) => {
+    setToastMessage(message);
+    toast(message);
+  };
 
   return (
     <div className="image-page">
@@ -44,7 +50,11 @@ const ImagePage = () => {
           <img src={image.largeImageURL} alt={image.tags} />
         </div>
         <div className="image-details">
-          <ImageDetailsCard image={image} />
+        <ImageDetailsCard image={image} onToast={handleToast} />
+        <ToastContainer
+          position="bottom-right"
+          toastClassName="toast-success"
+        />
         </div>
       </div>
       <div className="related-images">

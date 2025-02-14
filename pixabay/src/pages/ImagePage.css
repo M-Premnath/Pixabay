@@ -179,6 +179,7 @@
   }
   .image-content {
     padding: 5px;
+    margin-top: 30px;
   }
   .back-button {
     top: 60px;
@@ -189,5 +190,15 @@
   }
   .image-details {
     font-size: 14px;
+  }
+  .toast-success{
+    padding: 10px 30px;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    height: 1rem;
+    width: 230px;
   }
 }

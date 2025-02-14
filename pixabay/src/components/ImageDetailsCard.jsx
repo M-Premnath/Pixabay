@@ -3,16 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faDownload, faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import './ImageDetailsCard.css';
 import PropTypes from 'prop-types';
-import { ToastContainer, toast } from 'react-toastify';
 
-const ImageDetailsCard = ({ image }) => {
-  const notifyShare = () => toast("URL copied to clipboard!");
-  const notifyDownload = () => toast("Image downloaded successfully!");
+const ImageDetailsCard = ({ image, onToast }) => {
 
   const handleShare = () => {
     const url = image.pageURL;
     navigator.clipboard.writeText(url).then(() => {
-      notifyShare();
+      onToast("URL copied to clipboard!");
     });
   };
 
@@ -31,7 +28,7 @@ const ImageDetailsCard = ({ image }) => {
     document.body.removeChild(a);
 
     window.URL.revokeObjectURL(blobURL);
-    notifyDownload();
+    onToast("Image downloaded successfully!");
   };
 
   return (
@@ -68,11 +65,6 @@ const ImageDetailsCard = ({ image }) => {
           <button className="follow-button">Follow</button>
         </div>
         <button className="download-button" onClick={handleDownload}>Download</button>
-      
-      <ToastContainer
-        position="bottom-right"
-        toastClassName="toast-success"
-      />
     </div>
   );
 };
@@ -91,6 +83,7 @@ ImageDetailsCard.propTypes = {
     tags: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
   }).isRequired,
+  onToast: PropTypes.func.isRequired,
 };
 
 export default ImageDetailsCard;

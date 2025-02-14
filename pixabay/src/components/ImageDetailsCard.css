@@ -33,9 +33,14 @@
   gap: 4px;
   transition: color 0.3s;
 }
-.icon-button:hover {
+.icon-button:hover  {
   color: #000;
+  background-color: #f5f5f5;
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
 }
+
 
 .card-body {
   font-size: 14px;

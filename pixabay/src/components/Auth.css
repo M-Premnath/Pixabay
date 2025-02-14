@@ -4,69 +4,103 @@
   margin: 50px auto;
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
-.auth-form input {
-  display: block;
-  width: 93%;
-  padding: 10px;
-  margin: 10px 0;
+.auth-form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 80%;
+  padding: 10px 40px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 25px;
+  transition: border 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #888;
+}
+center p {
+  margin: 10px;
+}
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: #888;
+  cursor: pointer;
 }
 
 .auth-form button {
   width: 100%;
   padding: 10px;
-  background-color: #333;
+  background-color: #007bff;
   color: #fff;
   border: none;
-  margin: 7px auto;
-  border-radius: 4px;
+  border-radius: 25px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .auth-form button:hover {
-  background-color: #555;
+  background-color: #0056b3;
 }
 
-#google-btn{
+#google-btn {
   background-color: #fff;
   color: #333;
-  padding: 5px;
+  padding: 7px;
   border: 2px solid #ccc;
-  border-radius: 20px;
+  border-radius: 25px;
   display: flex;
-  justify-content: space-evenly;
-  font-weight: 600;
+  justify-content: center;
   align-items: center;
-  padding-right: 15%;
+  font-weight: 600;
   cursor: pointer;
-}
-#google-btn img{
-  margin-left: -80px;
-  height: 30px;
-  background-color: #555;
-
+  transition: background-color 0.3s;
 }
 
+#google-btn:hover {
+  background-color: #f5f5f5;
+}
 
-@media (max-width: 768px)   {
+#google-btn img {
+  margin-right: 10px;
+  height: 25px;
+}
+
+@media (max-width: 768px) {
   .auth-container {
     max-width: 300px;
-    margin: 50px 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 30px 15px;
   }
-  #google-btn img{
-    margin-left: -15px;
-    height: 30px;
-    background-color: #555;
-  
+
+  #google-btn img {
+    margin-right: 5px;
   }
-  
+  .input-group input {
+    width: 65%;
+  }
 }
